@@ -1,8 +1,12 @@
-
-
 <div class="container">
+  <div class="card-category"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1527661591475-527312dd65f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=716&q=80)">
 
   <h1>Create a new Cocktail</h1>
+
+  </div>
+
+
+  <div class="container">
 
   <%= simple_form_for(@cocktail) do |f| %>
     <%= f.error_notification %>
@@ -22,13 +26,12 @@
 
        <!--  -->
       <div class="form-actions">
-        <%= f.submit "Create a new cocktail", class: "btn btn-primary"%>
+        <%= f.submit "Create a new cocktail", class: "btn btn-gradient"%>
       </div>
     </div>
   <% end %>
 
-  <%= link_to "Back", cocktails_path, class: "btn btn-primary"%>
-
+  <%= link_to "Back", cocktails_path, class: "btn btn-gradient"%>
 
 </div>
 
