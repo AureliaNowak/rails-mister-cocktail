@@ -8,13 +8,19 @@
 require 'json'
 require 'open-uri'
 
+puts "Destroy ingredients"
+Ingredient.destroy_all
+
+puts "Destroy Cocktails"
+Cocktail.destroy_all
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredient_serialized = open(url).read
 ingredients = JSON.parse(ingredient_serialized)
 
 ingredients['drinks'].each do |ingredient|
-  Ingredient.new(name: ingredient["strIngredient1"])
+  i = Ingredient.create(name: ingredient["strIngredient1"])
+  puts "create #{i.name}"
 end
 
 
